@@ -28,12 +28,12 @@ class TestWorkflowsBase(snakemake.common.tests.TestWorkflowsBase):
             service_account_email=get_default_service_account_email(),
         )
 
-    def get_default_remote_provider(self) -> Optional[str]:
+    def get_default_storage_provider(self) -> Optional[str]:
         # Return name of default remote provider if required for testing,
         # otherwise None.
         return "GS"
 
-    def get_default_remote_prefix(self) -> Optional[str]:
+    def get_default_storage_prefix(self) -> Optional[str]:
         # Return default remote prefix if required for testing,
         # otherwise None.
         return BUCKET_NAME
