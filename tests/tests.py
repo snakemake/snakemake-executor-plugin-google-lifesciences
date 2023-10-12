@@ -1,4 +1,3 @@
-import subprocess
 import tempfile
 from typing import Optional
 
