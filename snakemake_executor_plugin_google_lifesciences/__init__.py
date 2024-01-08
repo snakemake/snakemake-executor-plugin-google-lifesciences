@@ -760,7 +760,7 @@ class Executor(RemoteExecutor):
         commands = [
             "/bin/bash",
             "-c",
-            f"wget -O /gls.py https://raw.githubusercontent.com/snakemake/snakemake/main/snakemake/executors/google_lifesciences_helper.py && chmod +x /gls.py && source activate snakemake || true && python /gls.py save {self.bucket.name} /google/logs {self.gs_logs}/{job.name}/jobid_{job.jobid}",
+            f"wget -O /gls.py https://raw.githubusercontent.com/snakemake/snakemake-executor-plugin-google-lifesciences/main/snakemake_executor_plugin_google_lifesciences/google_lifesciences_helper.py && chmod +x /gls.py && source activate snakemake || true && python /gls.py save {self.bucket.name} /google/logs {self.gs_logs}/{job.name}/jobid_{job.jobid}",
         ]
 
         # Always run the action to generate log output
@@ -789,7 +789,7 @@ class Executor(RemoteExecutor):
             "mkdir -p /workdir && "
             "cd /workdir && "
             "wget -O /download.py "
-            "https://raw.githubusercontent.com/snakemake/snakemake/main/snakemake/executors/google_lifesciences_helper.py && "
+            "https://raw.githubusercontent.com/snakemake/snakemake-executor-plugin-google-lifesciences/main/snakemake_executor_plugin_google_lifesciences/google_lifesciences_helper.py && "
             "chmod +x /download.py && "
             "source activate snakemake || true && "
             f"python /download.py download {self.bucket.name} {self.pipeline_package} "
